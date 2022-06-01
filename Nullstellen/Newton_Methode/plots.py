@@ -14,7 +14,7 @@ angegeben werden.
 """
 
 import matplotlib.pyplot as plt
-from Newton import Newton
+from Newton import newton
 import numpy as np
 import glob
 import os
@@ -34,7 +34,7 @@ def gerade(x0, fx0, dfx0, x):
     """
     return dfx0*(x - x0) + fx0, x0 - fx0/dfx0
 
-def plot_Newton(data):
+def plot_newton(data):
     # prepare data
     data = np.array(data)
     xvals = data[:, 0]
@@ -73,8 +73,8 @@ def main():
     for filename in glob.glob('./plots/plot_*.png'):
         os.remove(filename)
     Nullstelle_geraten = 2
-    x, info = Newton(f, Nullstelle_geraten, df, store=True, N=50)
-    plot_Newton(info)
+    x, info = newton(f, Nullstelle_geraten, df, store=True, N=50)
+    plot_newton(info)
 
 if __name__ == '__main__':
     main()

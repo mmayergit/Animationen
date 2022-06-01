@@ -5,7 +5,7 @@ Langtangen, Hans Petter(2016): A Primer on Scientific Programming with Python,
 Springer: Berlin / Heidelberg, 5. Auflage.
 """
 
-def Newton(f, x, dfdx, epsilon=1e-7, N=100, store=False):
+def newton(f, x, dfdx, epsilon=1e-7, N=100, store=False):
     f_value = f(x)
     n = 0
     if store: info = [(x, f_value)]
